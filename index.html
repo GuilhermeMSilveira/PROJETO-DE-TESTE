@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Jogo de Pênaltis ❤️</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <!-- =========================
+             CABEÇALHO
+        ========================== -->
+
+        <header>
+
+            <h1>
+                ⚽ JOGO DE PÊNALTIS
+            </h1>
+
+            <p>
+                Flamengo x Palmeiras
+            </p>
+
+        </header>
+
+
+        <!-- =========================
+             PLACAR
+        ========================== -->
+
+        <section class="scoreboard">
+
+            <div class="team player-team">
+
+                <div class="team-logo flamengo-logo">
+                    CRF
+                </div>
+
+                <div>
+
+                    <span class="team-title">
+                        FLAMENGO
+                    </span>
+
+                    <span
+                        id="scoreA"
+                        class="score"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="versus">
+
+                <span>
+                    VS
+                </span>
+
+                <small id="roundInfo">
+                    Rodada 1
+                </small>
+
+            </div>
+
+
+            <div class="team machine-team">
+
+                <div>
+
+                    <span class="team-title">
+                        PALMEIRAS
+                    </span>
+
+                    <span
+                        id="scoreB"
+                        class="score"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+                <div class="team-logo palmeiras-logo">
+                    P
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             VEZ
+        ========================== -->
+
+        <section class="turn-info">
+
+            <h2 id="turnTitle">
+                ⚽ FLAMENGO — SUA VEZ DE BATER!
+            </h2>
+
+            <p id="turnDescription">
+                Escolha onde você quer chutar.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CAMPO
+        ========================== -->
+
+        <section class="field">
+
+            <!-- =========================
+                 ARQUIBANCADA FLAMENGO
+            ========================== -->
+
+            <div class="stands">
+
+                <div class="stand-roof">
+                    🔴⚫ FLAMENGO 🔴⚫
+                </div>
+
+
+                <div class="fan-row row-1">
+
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+
+                </div>
+
+
+                <div class="fan-row row-2">
+
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan black">👤</div>
+
+                </div>
+
+
+                <div class="fan-row row-3">
+
+                    <div class="fan red">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan red">👤</div>
+                    <div class="fan black">👤</div>
+                    <div class="fan">👤</div>
+                    <div class="fan red">👤</div>
+
+                </div>
+
+
+                <div class="flag flag-left">
+                    🔴⚫
+                </div>
+
+
+                <div class="flag flag-center">
+                    CRF
+                </div>
+
+
+                <div class="flag flag-right">
+                    🔴⚫
+                </div>
+
+
+                <div class="supporter-banner">
+                    MENGÃO
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 GOL
+            ========================== -->
+
+            <div class="goal">
+
+                <div
+                    id="goalkeeper"
+                    class="goalkeeper"
+                >
+                    🧤
+                </div>
+
+
+                <div class="target-grid">
+
+                    <button
+                        class="target"
+                        data-position="top-left"
+                    >
+                        ↖
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="top-center"
+                    >
+                        ↑
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="top-right"
+                    >
+                        ↗
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="middle-left"
+                    >
+                        ←
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="middle-center"
+                    >
+                        ●
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="middle-right"
+                    >
+                        →
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="bottom-left"
+                    >
+                        ↙
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="bottom-center"
+                    >
+                        ↓
+                    </button>
+
+                    <button
+                        class="target"
+                        data-position="bottom-right"
+                    >
+                        ↘
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 BOLA
+            ========================== -->
+
+            <div
+                id="ball"
+                class="ball"
+            >
+                ⚽
+            </div>
+
+
+            <!-- =========================
+                 JOGADOR
+            ========================== -->
+
+            <div
+                id="player"
+                class="player flamengo-player"
+            >
+
+                <div class="player-head"></div>
+
+                <div class="player-body">
+
+                    <div class="shirt-number">
+                        10
+                    </div>
+
+                </div>
+
+                <div class="player-arm left-arm"></div>
+
+                <div class="player-arm right-arm"></div>
+
+                <div class="player-leg left-leg"></div>
+
+                <div class="player-leg right-leg"></div>
+
+                <div class="player-foot left-foot"></div>
+
+                <div class="player-foot right-foot"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESULTADO
+        ========================== -->
+
+        <section class="result">
+
+            <h2 id="message">
+                Escolha onde você quer chutar!
+            </h2>
+
+        </section>
+
+
+        <!-- =========================
+             HISTÓRICO
+        ========================== -->
+
+        <section class="history">
+
+            <h2>
+                Histórico
+            </h2>
+
+            <div id="historyList"></div>
+
+        </section>
+
+
+        <!-- =========================
+             REINICIAR
+        ========================== -->
+
+        <button
+            id="restartButton"
+            class="restart-button"
+        >
+            🔄 Reiniciar Jogo
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         TELA ESPECIAL DE VITÓRIA
+    ================================================== -->
+
+    <div
+        id="victoryScreen"
+        class="special-screen"
+    >
+
+        <div class="victory-content">
+
+            <div class="victory-ball">
+                ⚽
+            </div>
+
+            <div class="confetti">
+                ❤️
+            </div>
+
+            <h1>
+                PARABÉNS!
+            </h1>
+
+            <h2>
+                VOCÊ GANHOU! 🏆
+            </h2>
+
+            <p>
+                Você conseguiu vencer todos os desafios!
+            </p>
+
+            <div class="victory-hearts">
+                ❤️ ❤️ ❤️
+            </div>
+
+            <button
+                id="openLetterButton"
+                class="special-button"
+            >
+                Continuar ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         CARTA
+    ================================================== -->
+
+    <div
+        id="letterScreen"
+        class="letter-screen"
+    >
+
+        <div class="letter">
+
+            <!-- DECORAÇÃO SUPERIOR -->
+
+            <div class="letter-decoration top">
+                ♥
+            </div>
+
+
+            <!-- CABEÇALHO -->
+
+            <div class="letter-header">
+
+                <span>
+                    💌
+                </span>
+
+                <h1>
+                    Uma cartinha para você
+                </h1>
+
+                <span>
+                    💕
+                </span>
+
+            </div>
+
+
+            <!-- ==================================================
+                 TEXTO DA CARTA
+            ================================================== -->
+
+            <div class="letter-content">
+
+                <p class="letter-opening">
+                    <strong>
+                        Parabéns, meu amor! ❤️
+                    </strong>
+                </p>
+
+
+                <p>
+                    Você conseguiu vencer uma partida de pênaltis!
+                    E, com todo o seu esforço, chegou até o final.
+                    Mas, na verdade, essa partida era só uma pequena
+                    desculpa para chegar até este momento.
+                </p>
+
+
+                <p>
+                    Meu amor, por mais que essa cartinha e essa
+                    brincadeira possam parecer algo simples ou até
+                    mesmo bobo, eu precisei separar um tempo para
+                    criar tudo isso para você. Fiz isso porque queria
+                    te mostrar, do meu jeito, que sou capaz de fazer
+                    qualquer coisa para te ver feliz, para ver o seu
+                    sorriso e, principalmente, para criar momentos
+                    que nós dois possamos guardar para sempre.
+                </p>
+
+
+                <p>
+                    E é justamente por isso que eu queria aproveitar
+                    este momento para abrir meu coração e te dizer
+                    algumas coisas que talvez eu nem sempre consiga
+                    falar da maneira que gostaria.
+                </p>
+
+
+                <p>
+                    Eu quero que você saiba o quanto eu te amo,
+                    meu amor. Amo você mais do que chocolate —
+                    e olha que você sabe o quanto isso significa! 😂❤️
+                </p>
+
+
+                <p>
+                    Você é tudo aquilo que eu um dia pedi a Deus.
+                    Uma mulher verdadeira, uma joia rara, uma verdadeira
+                    princesa dos contos de fadas. E eu agradeço todos
+                    os dias por ter colocado você na minha vida.
+                </p>
+
+
+                <p>
+                    Quero também te agradecer por ter estado ao meu
+                    lado nos momentos difíceis da minha vida. Sei que,
+                    em muitos momentos, o trabalho acabou tomando
+                    grande parte do meu tempo e nem sempre consegui
+                    estar presente da maneira que gostaria. Mas você
+                    teve paciência comigo, me compreendeu e permaneceu
+                    firme ao nosso lado.
+                </p>
+
+
+                <p>
+                    E isso significa muito para mim.
+                </p>
+
+
+                <p>
+                    Eu vejo através do brilho dos seus olhos que você
+                    está disposta a fazer de tudo para me ter ao seu
+                    lado, e quero que saiba que eu também estou disposto
+                    a fazer tudo o que estiver ao meu alcance para estar
+                    sempre ao seu lado.
+                </p>
+
+
+                <p>
+                    Nós chegamos até aqui juntos, e eu tenho certeza
+                    de que ainda vamos muito mais longe.
+                </p>
+
+
+                <p>
+                    Porque nós dois sabemos que colocamos Deus à nossa
+                    frente. E quando colocamos Deus na frente de tudo,
+                    sabemos que nada pode nos separar. Como diz a Palavra:
+                </p>
+
+
+                <div class="bible-verse">
+
+                    “Tudo posso naquele que me fortalece.”
+
+                </div>
+
+
+                <p>
+                    E, meu amor, como você já sabe: se algum dia você
+                    acordar pensando em querer terminar comigo, pode
+                    simplesmente voltar a dormir. 😂❤️ Quando acordar
+                    de novo, tenho certeza de que essa vontade já
+                    vai ter passado.
+                </p>
+
+
+                <p>
+                    Brincadeiras à parte, eu amo tudo em você.
+                </p>
+
+
+                <p>
+                    Amo o seu jeito de ser, seu jeito fofo, alegre
+                    e meigo. Amo a pessoa maravilhosa que você é,
+                    sua simpatia, sua educação e a maneira como você
+                    consegue tornar os meus dias melhores simplesmente
+                    sendo você.
+                </p>
+
+
+                <p>
+                    É claro que também vão existir aqueles momentos
+                    em que você vai estar brabinha, chatinha e querendo
+                    me matar. 😂❤️ Mas isso faz parte. Somos seres
+                    humanos, não robôs. E são justamente todas essas
+                    pequenas coisas que fazem você ser quem você é
+                    e que fazem eu amar você ainda mais.
+                </p>
+
+
+                <p>
+                    E depois de tudo isso, depois de todas as nossas
+                    histórias, dos momentos bons e difíceis, das
+                    risadas, das brincadeiras e de tudo que já vivemos
+                    juntos, eu percebi que não queria deixar esse
+                    momento passar como apenas mais uma lembrança.
+                </p>
+
+
+                <p>
+                    Eu queria transformar esse momento em algo que
+                    nós dois pudéssemos guardar para sempre.
+                </p>
+
+
+                <p>
+                    Por isso, hoje, depois de você vencer essa partida,
+                    eu quero te fazer o meu verdadeiro pedido.
+                </p>
+
+
+                <div class="main-request">
+
+                    <p>
+                        Quero pedir a sua mão em namoro.
+                    </p>
+
+                    <p>
+                        Quero que você seja oficialmente a minha
+                        namorada e quero continuar construindo a nossa
+                        história ao seu lado.
+                    </p>
+
+                </div>
+
+
+                <p>
+                    Quero que você saiba que eu te amo muito, meu amor.
+                    Muito mais do que qualquer palavra conseguiria
+                    explicar.
+                </p>
+
+
+                <p>
+                    E que venham muitos anos ao seu lado.
+                </p>
+
+
+                <p>
+                    Que venham muitos sorrisos, muitas histórias,
+                    muitos momentos, algumas briguinhas, muitas
+                    reconciliações, muitos sonhos realizados e,
+                    acima de tudo, muito amor.
+                </p>
+
+
+                <p>
+                    Que Deus continue guiando os nossos caminhos e
+                    que possamos caminhar juntos não apenas por alguns
+                    anos, mas até a eternidade. ❤️
+                </p>
+
+
+                <div class="love-final">
+
+                    <strong>
+                        Eu te amo, meu amor.
+                    </strong>
+
+                </div>
+
+
+                <div class="final-question">
+
+                    <span>
+                        E então...
+                    </span>
+
+                    <strong>
+                        Você aceita namorar comigo? ❤️
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- RODAPÉ -->
+
+            <div class="letter-footer">
+
+                <span>
+                    ❤️
+                </span>
+
+                <span>
+                    Com carinho
+                </span>
+
+                <span>
+                    ❤️
+                </span>
+
+            </div>
+
+
+            <!-- DECORAÇÃO INFERIOR -->
+
+            <div class="letter-decoration bottom">
+                ♥
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
